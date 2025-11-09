@@ -20,11 +20,25 @@ assignment
 
 // Expressions
 expression
-    : expression op=('*'|'/') expression
+    : literal
+    | VAR
+    | expression op=('*'|'/') expression
     | expression op=('+'|'-'|'%') expression
     | '(' expression ')'
-    | NUMBER
-    | VAR
+    ;
+
+// Literals
+literal
+    : NUMBER
+    | FLOAT
+    | STRING
+    | BOOLEAN
+    | array
+    ;
+
+// Array 
+array
+    : LBRACKET (expression (COMMA expression)*)? RBRACKET
     ;
 
 // Tokens
@@ -34,6 +48,16 @@ MINUS_EQUALS: '-=';
 TIMES_EQUALS: '*=';
 DIV_EQUALS: '/=';
 
-VAR: [a-zA-Z_][a-zA-Z0-9_]*;
+LBRACKET: '[';
+RBRACKET: ']';
+COMMA: ',';
+
+
+// Identifiers and literal defs
+BOOLEAN: 'True' | 'False';
+STRING: ('"' (~["\\\r\n])* '"' | '\'' (~['\\\r\n])* '\'');
 NUMBER: [0-9]+;
+FLOAT: [0-9]+'.'[0-9]+;
+VAR: [a-zA-Z_][a-zA-Z0-9_]*;
+
 WS: [ \t\r\n]+ -> skip;

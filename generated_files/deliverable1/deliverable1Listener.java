@@ -46,4 +46,24 @@ public interface deliverable1Listener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitExpression(deliverable1Parser.ExpressionContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link deliverable1Parser#literal}.
+	 * @param ctx the parse tree
+	 */
+	void enterLiteral(deliverable1Parser.LiteralContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link deliverable1Parser#literal}.
+	 * @param ctx the parse tree
+	 */
+	void exitLiteral(deliverable1Parser.LiteralContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link deliverable1Parser#array}.
+	 * @param ctx the parse tree
+	 */
+	void enterArray(deliverable1Parser.ArrayContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link deliverable1Parser#array}.
+	 * @param ctx the parse tree
+	 */
+	void exitArray(deliverable1Parser.ArrayContext ctx);
 }

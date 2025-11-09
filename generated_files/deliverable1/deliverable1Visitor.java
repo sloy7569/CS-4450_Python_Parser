@@ -33,4 +33,16 @@ public interface deliverable1Visitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitExpression(deliverable1Parser.ExpressionContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link deliverable1Parser#literal}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitLiteral(deliverable1Parser.LiteralContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link deliverable1Parser#array}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitArray(deliverable1Parser.ArrayContext ctx);
 }
