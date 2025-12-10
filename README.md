@@ -14,6 +14,7 @@ There are 3 deliverables in this project, each one includes the contents of the 
   - while and for loops
   - Nested Structures
   - Support for comments
+  - FIX FOR INDENTATION
 
 ## Team Members
 - Spencer Loy
@@ -48,14 +49,19 @@ java -jar lib/antlr-4.13.2-complete.jar -Dlanguage=Java -visitor -o generated_fi
 ### Compile Project
 
 ```
-javac -cp "lib/antlr-4.13.2-complete.jar:generated_files/deliverable3:src/main/java" generated_files/deliverable3/*.java src/main/java/*.java
+javac -cp "lib/antlr-4.13.2-complete.jar:generated_files/deliverable3:src/main/java" src/main/java/*.java generated_files/deliverable3/*.java
 ```
 
-### Run Parser
+### Option 1: Run Parser
 
 ```
 java -cp "lib/antlr-4.13.2-complete.jar:generated_files/deliverable3:src/main/java" ParserMainD3 tests/pythontestd3.py
 ```
 
+## Option 2: Run Parser with Parse Tree Graphical Output
+```
+java -cp "lib/antlr-4.13.2-complete.jar:generated_files/deliverable3:." org.antlr.v4.gui.TestRig deliverable3 program -gui tests/pythontestd3.py
+```
+
 ### Demo Link
-test
+https://youtu.be/gRErDAL7wjQ
